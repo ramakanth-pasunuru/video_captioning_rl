@@ -42,17 +42,19 @@ For running the pretrained models:
 python main.py --mode test --load_path "path_to_model_ending_with_*.pth" --beam_size 5 
 ```
 
-## Results
+## MSR-VTT Results
 
 On running the above given pretrained models you should achieve the following results:
 
-| Models             | BLEU-4 | CIDEr | METEOR | ROUGE |
-| ------------------ | ------ | ----- | ------ | ----- |
-| Baseline-XE        | 40.8   | 48.2  | 28.1   | 60.7  |
-| CIDEr-RL           | 41.8   | 52.5  | 28.0   | 62.2  |
-| CIDEnt-RL          | 42.2   | 53.0  | 28.2   | 62.3  |
+| Models             | CIDEr | BLEU-4 | METEOR | ROUGE |
+| ------------------ | ----- | ------ | ------ | ----- |
+| Baseline-XE        | 48.2  | 40.8   | 28.1   | 60.7  |
+| CIDEr-RL           | 52.5  | 41.8   | 28.0   | 62.2  |
+| CIDEnt-RL          | 53.0  | 42.2   | 28.2   | 62.3  |
 
-## Improvements w.r.t. EMNLP17 paper
+Note that first our CIDEr-RL model achieves stat. signif. improvements over Baseline-XE (on CIDEr, BLEU, and ROUGE) and then our CIDEnt-RL model achieves stat. signif. improvements over CIDEr-RL (on CIDEr, BLEU, and METEOR).
+
+**Note that this released baseline model has several improvements (and significantly better results) w.r.t. our EMNLP17 paper results, due to the following enhancements:**
 
 - Better visual features: (1) ResNet-152 frame-level features (2) ResNeXt-101 motion features
 - Used [SCST](https://arxiv.org/pdf/1612.00563.pdf) approach instead of [MIXER](https://arxiv.org/pdf/1511.06732.pdf) for reinforcement leanring
