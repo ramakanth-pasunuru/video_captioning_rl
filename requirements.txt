@@ -1,0 +1,6 @@
+numpy==1.14.1
+tensorflow==1.2.0
+tqdm==4.19.6
+tensorboardX==1.2
+pickle==4.0
+bottleneck==1.2.1
