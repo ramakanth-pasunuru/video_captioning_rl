@@ -1,4 +1,4 @@
-# Reinforced Video Captioning with Entailment Rewards
+# Reinforced Video Captioning with Entailment Rewards (EMNLP 2017)
 This repository contains the re-implementation along with improved results of the paper: [Reinforced Video Captioning with Entailment Rewards](https://arxiv.org/abs/1708.02300) (EMNLP 2017)
 
 This code is tested on python 3.6 and pytorch 0.3.
