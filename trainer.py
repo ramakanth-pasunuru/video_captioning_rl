@@ -17,8 +17,7 @@ from models import *
 from tensorboard import TensorBoard
 from data.common_loader import *
 
-#sys.path.append('/playpen2/home/ram/video_caption_eval')
-sys.path.append('/playpen1/home/ram/open-source/video_caption_eval_python3')
+sys.path.append('../video_caption_eval_python3')
 from automatic_evaluation import evaluate
 
 
@@ -145,7 +144,7 @@ class Trainer(object):
                 elif self.args.loss_function in ['rl', 'xe+rl']:
                     sampled_sequence, outputs = self.model.sample_rl(video_features, flengths, sampling='multinomial')
                     sampled_sequence_numpy = sampled_sequence.cpu().data.numpy()
-                    argmax_sequence,_ = self.model.sample_rl(video_features, flengths, sampling='multinomial')
+                    argmax_sequence,_ = self.model.sample_rl(video_features, flengths, sampling='argmax')
                     argmax_sequence_numpy = argmax_sequence.cpu().data.numpy()
                     reward, seq_lengths = self.calculate_reward(sampled_sequence_numpy, batch.get('original_caption_dict'), batch.get('video_id'), 
                                                             self.train_data.vocab)
